@@ -2,11 +2,11 @@
 
 ## Getting started
 
-Clone the repo and navigate to it/
+Clone the repo and navigate to it
 
 ```
-git clone https://github.com/Dumbnorix/regex-generator.git
-cd /your-workspace/regex-generator
+git clone https://github.com/Dumbnorix/regex-builder.git
+cd /your-workspace/regex-builder
 ```
 
 ## Run via command line
