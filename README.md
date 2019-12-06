@@ -30,4 +30,4 @@ The specification outlines that the program should be a reusable module.
 * [python3.7](https://www.python.org/downloads/release/python-370/)
 * [unittest](https://docs.python.org/3/library/unittest.html)
 * [re](https://docs.python.org/3/library/re.html) - Regular expression operations
-* [loggin](https://docs.python.org/3/library/logging.html)
+* [logging](https://docs.python.org/3/library/logging.html)
