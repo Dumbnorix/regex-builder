@@ -38,9 +38,8 @@ class Tests(unittest.TestCase):
         self.assertEqual(self.regexBuilder.run(lines, pattern), ['my name is alexander bush'])
 
     def test_run_withNoPattern(self):
-        pattern = None
         with self.assertRaises(TypeError):
-            self.regexBuilder.run(pattern)
+            self.regexBuilder.run([], None)
 
 if __name__ == '__main__':
     unittest.main()
