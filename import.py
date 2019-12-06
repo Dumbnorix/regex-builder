@@ -1,4 +1,9 @@
-from regexbuilder import RegexBuilder
+'''
+import.py
+
+A sample file to show usage of importing the program as a module and using it
+'''
+from builder import RegexBuilder
 
 regex = RegexBuilder()
 
