@@ -8,7 +8,7 @@ class RegexBuilder(object):
     @Log(skip=True) # example optional modifying skip paramater
     def run(self, lines, pattern):
         if pattern is None:
-            raise TypeError
+            raise TypeError('Please provide a pattern argument')
 
         matches = []
         regex = self.buildRegex(pattern)
