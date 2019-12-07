@@ -13,17 +13,17 @@ cd /your-workspace/regex-builder
 
 The specification outlines that the program should allow command line usage.
 
-`cat input.txt | python builder.py "foo %{0} is a %{1S2}" > output.txt`
+`cat input.txt | python3 builder.py "foo %{0} is a %{1S2}" > output.txt`
 
 ## Run via module import
 
 The specification outlines that the program should be a reusable module.
 
-`$ python import.py`
+`$ python3 import.py`
 
 ## Running the tests
 
-`python -m unittest tests.py`
+`python3 -m unittest tests.py`
 
 ## Built with
 
