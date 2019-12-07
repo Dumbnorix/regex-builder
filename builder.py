@@ -31,20 +31,22 @@ class RegexBuilder(object):
         # here \1 indicates the number of spaces provided within the token using a capture group backreference
         regex = re.sub(r'%{[\d+][S](\d+)}', r'([a-zA-Z0-9_]+ ){\1}([a-zA-Z0-9_]+)', regex)
 
+        # replace all instances of greedy tokens with ([a-zA-Z0-9-_]+ *)+
+        regex = re.sub(r'%{[\d+][G]}', r'([a-zA-Z0-9-_]+ *)+', regex)
+
         return regex
 
     @Log()
     def matchLine(self, line, regex):
         match = re.search(regex, line)
         if (match):
-            if __name__ == '__main__': print(match.string) # if running via cli, print to stdout to write to file
+            if __name__ == '__main__': sys.stdout.write(str(match.string) + '\n')
             return match.string
 
 if __name__ == '__main__':
     lines = sys.stdin.read().split('\n')
-    if len(sys.argv) > 1:
-        pattern = sys.argv[1]
+
+    for pattern in sys.argv[1:]:
         RegexBuilder().run(lines, pattern)
-        sys.stdout.flush()
-    else:
-        raise TypeError('Please provide a pattern argument')
+
+    # sys.stdout.flush()
