@@ -23,6 +23,8 @@ The specification outlines that the program should accept 1 or more patterns.
 
 The specification outlines that the program should be a reusable module.
 
+The file `import.py` imports the program class and re-uses it as a module.
+
 `$ python3 import.py`
 
 ## Running the tests
