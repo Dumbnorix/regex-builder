@@ -54,5 +54,3 @@ if __name__ == '__main__':
 
     for pattern in sys.argv[1:]:
         RegexBuilder().run(lines, pattern)
-
-    # sys.stdout.flush()
