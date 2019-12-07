@@ -22,6 +22,16 @@ class Tests(unittest.TestCase):
         expected = r'^my ([a-zA-Z0-9-_]+ *)+ is ([a-zA-Z0-9_]+ ){2}([a-zA-Z0-9_]+)$'
         self.assertEqual(self.regexBuilder.buildRegex(pattern), expected)
 
+    def test_buildRegex_withStringLiteralsOnly(self):
+        pattern = 'my      name  is     alex'
+        expected = r'^my      name  is     alex$'
+        self.assertEqual(self.regexBuilder.buildRegex(pattern), expected)
+
+    def test_buildRegex_withNoPattern(self):
+        pattern = None
+        expected = None
+        self.assertEqual(self.regexBuilder.buildRegex(pattern), expected)
+
     def test_matchLine_correctlyMatches(self):
         line = 'my name is alexander bush'
         regex = r'^my name is ([a-zA-Z0-9-_]+ *)+$'
@@ -30,6 +40,11 @@ class Tests(unittest.TestCase):
     def test_matchLine_correctlyIgnoresNonMatches(self):
         line = 'my name is'
         regex = r'^my name is ([a-zA-Z0-9-_]+ *)+$'
+        self.assertEqual(self.regexBuilder.matchLine(line, regex), None)
+
+    def test_matchLine_handlesNone(self):
+        line = 'my name is alexander'
+        regex = None
         self.assertEqual(self.regexBuilder.matchLine(line, regex), None)
 
     def test_run_returnsMatchedLines(self):

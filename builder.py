@@ -21,6 +21,9 @@ class RegexBuilder(object):
 
     @Log(quiet=True) # example optional modifying quiet paramater
     def buildRegex(self, pattern):
+        if pattern is None:
+            return None
+        
         # base the regex off the pattern because this allows capturing the exact whitespace provided between string literals
         regex = f'^{pattern}$'
 
@@ -38,6 +41,9 @@ class RegexBuilder(object):
 
     @Log()
     def matchLine(self, line, regex):
+        if regex is None:
+            return None
+            
         match = re.search(regex, line)
         if (match):
             if __name__ == '__main__': sys.stdout.write(str(match.string) + '\n')
