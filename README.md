@@ -15,6 +15,10 @@ The specification outlines that the program should allow command line usage.
 
 `cat input.txt | python3 builder.py "foo %{0} is a %{1S2}" > output.txt`
 
+The specification outlines that the program should accept 1 or more patterns.
+
+`cat input.txt | python3 builder.py "foo %{0} is a %{1S2}" "the big %{0} fox ran away" > output.txt`
+
 ## Run via module import
 
 The specification outlines that the program should be a reusable module.
